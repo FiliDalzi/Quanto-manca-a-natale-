@@ -48,22 +48,22 @@ const christmasCountdown = () => {
          christmasDay = new Date(nextChristmasDate),
          timeLeft = christmasDay - now
 
-    let days = 0,
+    let giorni = 0,
          hours = 0,
          minutes = 0,
          seconds = 0
 
     // Don't calculate the time left if it is Christmas day
     if (currentMonth != 12 || (currentMonth == 12 && currentDay != 25)) {
-        days = Math.floor(timeLeft / 1000 / 60 / 60 / 24)
+        giorni = Math.floor(timeLeft / 1000 / 60 / 60 / 24)
         hours = Math.floor(timeLeft / 1000 / 60 / 60) % 24
         minutes = Math.floor(timeLeft / 1000 / 60) % 60
         seconds = Math.floor(timeLeft / 1000) % 60
     }
 
-    // Show missing days
-    numberData.innerHTML = days < 10 ? `0${days}` : days
-    textData.innerHTML = 'Days'
+    // Show missing giorni
+    numberData.innerHTML = giorni < 10 ? `0${giorni}` : giorni
+    textData.innerHTML = 'Giorni'
 
     // Show missing hours
     if (currentDay == 24) {
@@ -90,11 +90,12 @@ const christmasCountdown = () => {
         msgChristmas.innerHTML = 'Today is Dec 25, Merry Christams!'
     }
 
-    // Show remaining days & remove Christmas message
+    // Show remaining giorni & remove Christmas message
     if (currentMonth == 12 && currentDay == 26){
         titleData.style.display = 'block'
         msgChristmas.style.display = 'none'
     }
 }
+
 
 setInterval(christmasCountdown, 1000)

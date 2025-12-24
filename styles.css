@@ -479,3 +479,20 @@ nnav__link{
     top: 0;
   }
 }
+
+/* Overlay */
+#start-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(3, 94, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#start-btn {
+    font-size: 20px;
+    padding: 15px 30px;
+    cursor: pointer;
+}
